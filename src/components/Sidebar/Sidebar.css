@@ -1,0 +1,70 @@
+.sidebar {
+    width: fit-content;
+    background: #3c3f43;
+    height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: width 0.3s ease-in-out; 
+    text-wrap: nowrap;
+}
+
+/* .sidebar.open {
+    animation: sidebarToggle 0.3s ease-in-out forwards;
+    width: 200px;
+}
+
+.sidebar.close {
+    animation: sidebarToggle 0.3s ease-in-out forwards;
+    width: 60px;
+} */
+.bars {
+    width: 16px;
+    margin: 0 0 16px 0;
+}
+
+.new-chat {
+    margin: 0 0 16px 0;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.edit {
+    width: 16px;
+}
+
+.explore-gem {
+    margin: 0 0 16px 0;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+.gems {
+    width: 16px;
+}
+
+.settings {
+    margin: 0 0 16px 0;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.setting {
+    width: 16px;
+}
+
+.recent {
+    margin: 28px 0;
+}
+
+/* @keyframes sidebarToggle {  
+    from {
+        width: 0;
+    }
+    to {
+        width: 200px;
+    }
+} */
