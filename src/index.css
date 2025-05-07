@@ -6,3 +6,7 @@
   font-weight: 500;
   color: rgb(155, 162, 168);
 }
+
+::-webkit-scrollbar {
+  display: none;
+}

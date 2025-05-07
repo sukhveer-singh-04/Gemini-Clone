@@ -1,21 +1,28 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./Main.css";
 import fetchGeminiResponse from "../../api/geminiApi";
+import { ChatContext } from "../../context/ChatContext";
 const Main = () => {
     const [userPrompt, setUserPrompt] = useState('');
-    const [chatHistory, setChatHistory] = useState([]);
     const [aiResponse, setAiResponse] = useState('');
     const [currentChat, setCurrentChat] = useState([]);
+    const [loader, setLoader] = useState(false);
+    const {chatHistory, setChatHistory} = useContext(ChatContext);
 
     const handleSubmit = async () => {
+        setLoader(true);
         const response = await fetchGeminiResponse(userPrompt);
-        console.log('===>', response);
-        setAiResponse(response);
-        setCurrentChat([...currentChat, {
+    
+        const newEntry = {
             user: userPrompt,
             ai: response
-        }])
+        };
+    
+        const updatedChat = [...currentChat, newEntry];
+        setCurrentChat(updatedChat);
+        setChatHistory([...chatHistory, newEntry]);
         setUserPrompt('');
+        setLoader(false);    
     };
 
     return <div className="main">
@@ -31,17 +38,27 @@ const Main = () => {
         </div>
 
         <div className="main-container">
-            {!currentChat.length ? <div className="greet">
-                <h2 className="hello">Hello Dev</h2>
-                <p>How can I help you today?</p>
-            </div>
-                :
-            currentChat.map((chat, index) =>
-                <div className="history" key={index}>
-                    <h2 className="question">{chat.user}</h2>
-                    <p className="answer">{chat.ai}</p>
+            {!currentChat.length ?
+                <div className="greet">
+                    <h2 className="hello">Hello Dev</h2>
+                    <p>How can I help you today?</p>
                 </div>
-            )}
+                :
+                currentChat.map((chat, index) =>
+                    <div className="history" key={index}>
+                        <div className="user-query">
+                            <h2 className="question">{chat.user}</h2>
+                        </div>
+                        {loader ?
+                            <div className="loader">
+                                <h3 className="loader-hr" />
+                                <h3 className="loader-hr" />
+                                <h3 className="loader-hr" />
+                            </div>
+                            : <p className="answer">{chat.ai}</p>
+                        }
+                    </div>
+                )}
 
         </div>
 
@@ -60,7 +77,7 @@ const Main = () => {
                     }}
                     placeholder="Ask me anything..."
                 />
-                <div>
+                <div className="send-button">
                     <img
                         onClick={handleSubmit}
                         className='send'

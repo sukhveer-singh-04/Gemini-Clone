@@ -60,11 +60,16 @@
     margin: 28px 0;
 }
 
-/* @keyframes sidebarToggle {  
-    from {
-        width: 0;
-    }
-    to {
-        width: 200px;
-    }
-} */
+
+.entry {
+    display: flex;
+    gap: 12px;
+    margin: 12px 0;
+    align-items: center;
+    overflow: hidden;
+    max-width: 142px;
+    text-wrap: wrap;
+}
+.message-icon {
+    width: 16px;
+}
