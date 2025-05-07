@@ -25,8 +25,8 @@ const Main = () => {
                 <p className='ai'>AI Assistant</p>
             </div>
             <div className="right">
-                <img className="moon" src='./src/assets/moon-regular.svg' alt='theme'></img>
-                <img className='profile' src='./src/assets/circle-user-solid.svg' alt='profile' />
+                <img className="moon" src='assets/moon-regular.svg' alt='theme'></img>
+                <img className='profile' src='assets/circle-user-solid.svg' alt='profile' />
             </div>
         </div>
 
@@ -64,7 +64,7 @@ const Main = () => {
                     <img
                         onClick={handleSubmit}
                         className='send'
-                        src='./src/assets/send-svgrepo-com.svg '
+                        src='assets/send-svgrepo-com.svg '
                         alt='send'
                     />
                 </div>
