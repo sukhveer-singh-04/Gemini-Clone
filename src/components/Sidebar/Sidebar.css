@@ -1,75 +1,85 @@
 .sidebar {
-    width: fit-content;
-    background: #3c3f43;
-    height: 100vh;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: width 0.3s ease-in-out; 
-    text-wrap: nowrap;
+  width: fit-content;
+  background: var(--secondary-bg);
+  height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s ease-in-out;
+  text-wrap: nowrap;
 }
 
-/* .sidebar.open {
-    animation: sidebarToggle 0.3s ease-in-out forwards;
-    width: 200px;
+.upper,
+.bottom {
+  flex-shrink: 0;
 }
 
-.sidebar.close {
-    animation: sidebarToggle 0.3s ease-in-out forwards;
-    width: 60px;
-} */
 .bars {
-    width: 16px;
-    margin: 0 0 16px 0;
+  width: 14px;
+  margin: 0 0 16px 0;
 }
 
 .new-chat {
-    margin: 0 0 16px 0;
-    display: flex;
-    align-items: center;
-    gap: 14px;
+  margin: 0 0 16px 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
 }
 
 .edit {
-    width: 16px;
+  width: 18px;
+  margin: 4px 0;
 }
 
 .explore-gem {
-    margin: 0 0 16px 0;
-    display: flex;
-    align-items: center;
-    gap: 14px;
+  margin: 0 0 16px 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
 }
+
 .gems {
-    width: 16px;
+  width: 18px;
+  margin: 4px 0;
 }
 
 .settings {
-    margin: 0 0 16px 0;
-    display: flex;
-    align-items: center;
-    gap: 14px;
+  margin: 0 0 4px 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
 }
 
 .setting {
-    width: 16px;
+  width: 18px;
 }
 
 .recent {
-    margin: 28px 0;
+  margin: 8px 0;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
+.recent-entries {
+  overflow-y: auto;
+  flex-grow: 1;
+  margin: 12px 4px;
+}
 
 .entry {
-    display: flex;
-    gap: 12px;
-    margin: 12px 0;
-    align-items: center;
-    overflow: hidden;
-    max-width: 142px;
-    text-wrap: wrap;
+  display: flex;
+  gap: 12px;
+  margin: 12px 0;
+  align-items: center;
+  overflow: hidden;
+  max-width: 142px;
+  text-wrap: wrap;
 }
+
 .message-icon {
-    width: 16px;
+  width: 18px;
+  margin: 4px 0;
 }
